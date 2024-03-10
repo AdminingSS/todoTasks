@@ -22,14 +22,6 @@ export default function() {
     completedTask: {
       color: '#079f07'
     },
-    iconButton: {
-      width: 44,
-      height: 44,
-      padding: 0,
-      color: '#333',
-      backgroundColor: 'transparent',
-      border: '2px solid #aaa'
-    },
     statusIcon: {
       cursor: 'pointer'
     },
@@ -39,21 +31,13 @@ export default function() {
       alignItems: 'center',
       width: '100%'
     },
-    editTask: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      gap: 0
-    },
-    inputField: {
-      height: 24,
-      padding: '0 16px',
-      background: '#fff',
-      border: '1px solid #ccc',
-      borderRadius: '4px 0 0 4px'
-    },
-    editTaskButton: {
-      borderRadius: '0 4px 4px 0'
+    iconButton: {
+      width: 44,
+      height: 44,
+      padding: 0,
+      color: '#333',
+      backgroundColor: 'transparent',
+      border: '2px solid #aaa'
     },
     editButton: {
       color: '#ea9a01',

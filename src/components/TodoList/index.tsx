@@ -68,7 +68,7 @@ const TodoList: React.FC<TodoListProps> = ({title = 'ToDo List'}) => {
         {tasksMap.length ? tasksMap : <div className={classes.noTasks}>'No tasks available'</div>}
       </ul>
       <TaskInput onSubmit={handleAddTask} />
-      <p>Task summary: completed - {completedTasksCount}, in progress - {uncompletedTasksCount}</p>
+      <p>Task summary: <span className={classes.completedTask}>completed - {completedTasksCount}</span>, <span className={classes.currentTask}>in progress - {uncompletedTasksCount}</span></p>
     </div>
   )
 }

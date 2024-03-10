@@ -47,7 +47,7 @@ const TaskInput: React.FC<TaskInputProps> = ({onSubmit, defaultValue = ''}) => {
   }
 
   return (
-    <div className={classes.addTask}>
+    <div className={classes.root}>
       <input
         className={classes.inputField}
         type="text"
