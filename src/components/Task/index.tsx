@@ -20,11 +20,11 @@ import { editTask, deleteTask, toggleTaskStatus } from '../../actions'
 import { Task } from '../../interfaces'
 import { AppDispatch } from "../../store"
 
+import { MIN_TASK_NAME_LENGTH } from "../../constants";
+
 interface TaskProps {
   task: Task
 }
-
-const MIN_NAME_LENGTH = 8
 
 const Task: React.FC<TaskProps> = ({task}) => {
   const classes = useStyles()
@@ -41,7 +41,7 @@ const Task: React.FC<TaskProps> = ({task}) => {
   }
 
   const handleEditTask = (): void => {
-    if (newTaskName.trim().length >= MIN_NAME_LENGTH) {
+    if (newTaskName.trim().length >= MIN_TASK_NAME_LENGTH) {
       const editedTask = {
         id: task.id,
         name: newTaskName.trim(),

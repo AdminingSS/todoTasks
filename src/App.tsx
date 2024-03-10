@@ -4,7 +4,7 @@ import TodoList from './components/TodoList'
 import { AppDispatch } from './store'
 import { fetchTasksSuccess } from './actions'
 
-const API_URL = 'http://localhost:3001/tasks'
+import { API_URL } from "./constants"
 
 const App: React.FC = () => {
   type DispatchFunc = () => AppDispatch

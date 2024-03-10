@@ -15,11 +15,11 @@ import {addTask, setFilter} from '../../actions'
 import { Task, State } from '../../interfaces'
 import { AppDispatch } from "../../store"
 
+import { MIN_TASK_NAME_LENGTH } from "../../constants";
+
 type TodoListProps = {
   title?: string
 }
-
-const MIN_NAME_LENGTH = 8
 
 const TodoList: React.FC<TodoListProps> = ({title = 'ToDo List'}) => {
   const classes = useStyles()
@@ -38,7 +38,7 @@ const TodoList: React.FC<TodoListProps> = ({title = 'ToDo List'}) => {
   })
 
   const handleAddTask = (): void => {
-    if (newTaskName.trim().length >= MIN_NAME_LENGTH) {
+    if (newTaskName.trim().length >= MIN_TASK_NAME_LENGTH) {
       dispatch(addTask(newTaskName.trim()))
       setNewTaskName('')
     }

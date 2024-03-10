@@ -7,7 +7,10 @@ const cors = require('cors')
 const app = express()
 const PORT = 3001
 
-mongoose.connect('mongodb://localhost:27017/tasks', {})
+const MONGO_URL = process.env.MONGODB_URI || 'mongodb://localhost:27017/tasks'
+mongoose.connect(MONGO_URL).catch(error => {
+  console.error(error)
+})
 
 const Task = mongoose.model('Task', {
   id: Number,
