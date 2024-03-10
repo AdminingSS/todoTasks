@@ -15,7 +15,7 @@ import {addTask, setFilter} from '../../actions'
 import { Task, State } from '../../interfaces'
 import { AppDispatch } from "../../store"
 
-import { MIN_TASK_NAME_LENGTH } from "../../constants";
+import { MIN_TASK_NAME_LENGTH } from "../../constants"
 
 type TodoListProps = {
   title?: string

@@ -34,9 +34,10 @@ const deleteTaskOnServer = (taskId) : void => {
     })
 }
 
-const apiMiddleware = (state) => (next) => (action) : void => {
+const apiMiddleware = (store) => (next) => (action) : void => {
   if (action.type === 'ADD_TASK') {
-    const index = state.tasks?.length || 0
+    const state = store.getState()
+    const index = state.tasks.length || 0
     const task = {
       id: index + 1,
       name: action.payload,
@@ -51,6 +52,7 @@ const apiMiddleware = (state) => (next) => (action) : void => {
   }
 
   if (action.type === 'TOGGLE_TASK_STATUS') {
+    const state = store.getState()
     const taskId = action.payload
     const currentStatus = state.tasks?.find(task => task.id === taskId)?.completed || false
     const taskPart = {

@@ -20,7 +20,7 @@ import { editTask, deleteTask, toggleTaskStatus } from '../../actions'
 import { Task } from '../../interfaces'
 import { AppDispatch } from "../../store"
 
-import { MIN_TASK_NAME_LENGTH } from "../../constants";
+import { MIN_TASK_NAME_LENGTH } from "../../constants"
 
 interface TaskProps {
   task: Task
