@@ -11,5 +11,5 @@ export interface State {
 
 export interface Action {
   type: string
-  payload: string | number | Task
+  payload: string | number | Task | Task[]
 }

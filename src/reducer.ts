@@ -7,6 +7,11 @@ const initialState: State = {
 
 const reducer = (state = initialState, action: Action): State => {
   switch (action.type) {
+    case 'FETCH_TASKS_SUCCESS':
+      return {
+        ...state,
+        tasks: action.payload,
+      } as const as State
     case 'ADD_TASK':
       return {
         ...state,

@@ -1,7 +1,9 @@
-import { createStore } from 'redux'
-import reducer from './reducer'
+import { createStore, applyMiddleware } from 'redux'
 
-const store = createStore(reducer)
+import reducer from './reducer'
+import apiMiddleware from './middleware'
+
+const store = createStore(reducer, applyMiddleware(apiMiddleware))
 
 export type AppDispatch = typeof store.dispatch
 

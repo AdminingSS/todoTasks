@@ -1,5 +1,10 @@
 import {Action, Task} from './interfaces'
 
+export const fetchTasksSuccess = (tasks) : Action => ({
+  type: 'FETCH_TASKS_SUCCESS',
+  payload: tasks,
+})
+
 export const addTask = (task: string) : Action => ({
   type: 'ADD_TASK',
   payload: task,
