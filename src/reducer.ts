@@ -13,12 +13,14 @@ const reducer = (state = initialState, action: Action): State => {
         tasks: action.payload,
       } as const as State
     case 'ADD_TASK':
+      const existingIds = state.tasks.map(task => task.id)
+      const maxId = existingIds.length > 0 ? Math.max(...existingIds) : 0
       return {
         ...state,
         tasks: [
           ...state.tasks,
           {
-            id: state.tasks.length + 1,
+            id: maxId + 1,
             name: action.payload,
             completed: false,
           },

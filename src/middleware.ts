@@ -37,9 +37,10 @@ const deleteTaskOnServer = (taskId) : void => {
 const apiMiddleware = (store) => (next) => (action) : void => {
   if (action.type === 'ADD_TASK') {
     const state = store.getState()
-    const index = state.tasks.length || 0
+    const existingIds = state.tasks.map(task => task.id)
+    const maxId = existingIds.length > 0 ? Math.max(...existingIds) : 0
     const task = {
-      id: index + 1,
+      id: maxId + 1,
       name: action.payload,
       completed: false
     }
