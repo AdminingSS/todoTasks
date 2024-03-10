@@ -4,7 +4,7 @@
   "description": "server",
   "main": "server.js",
   "scripts": {
-    "server": "node server/server.js",
+    "server": "node server/server.js"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
