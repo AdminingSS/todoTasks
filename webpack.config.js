@@ -1,5 +1,6 @@
 /* eslint-disable */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
@@ -27,6 +28,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+    }),
+    new webpack.DefinePlugin({
+      'process.env.API_URL': JSON.stringify(process.env.API_URL || 'https://todo-tasks-server.vercel.app/tasks'),
     }),
   ],
   devServer: {
