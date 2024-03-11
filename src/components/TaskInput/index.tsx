@@ -46,17 +46,19 @@ const TaskInput: React.FC<TaskInputProps> = ({onSubmit, defaultValue = ''}) => {
     handleSubmit()
   }
 
+  const placeholder = defaultValue!.length ? 'Edit a task...' : 'Add a new task...'
+
   return (
     <div className={classes.root}>
       <input
         className={classes.inputField}
         type="text"
-        placeholder="Add a new task..."
+        placeholder={placeholder}
         value={newTaskName}
         onChange={handleInputChange}
         onKeyPress={handleInputKeyPress}
       />
-      <ButtonEl className={classes.addTaskButton} onClick={handleAddButtonClick}>Add Task</ButtonEl>
+      <ButtonEl className={classes.addTaskButton} onClick={handleAddButtonClick}>{defaultValue!.length ? 'Edit Task' : 'Add Task'}</ButtonEl>
       {!!error.length && <div className={classes.error}>{error}</div>}
     </div>
   )
