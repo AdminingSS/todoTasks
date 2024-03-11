@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import axios from "axios"
 import TodoList from './components/TodoList'
 import { AppDispatch } from './store'
 import { fetchTasksSuccess } from './actions'
@@ -12,11 +13,12 @@ const App: React.FC = () => {
   const dispatch = useAppDispatch()
 
   const fetchTasks = () : void => {
-    fetch(API_URL)
-      .then((response) => response.json())
+    axios.get(API_URL)
+      .then((response) => response.data)
       .then((tasks) => dispatch(fetchTasksSuccess(tasks)))
       .catch((error) => {
         console.error('Error fetching tasks:', error)
+        throw error
       })
   }
 
